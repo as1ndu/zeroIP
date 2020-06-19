@@ -29,4 +29,8 @@ Sphinx encrypts packet size/length, packet origin & packet destination.
 
 This allows node operators, miners  & wallet users to securely propergate transactions amongst
 each other without revealing metadata like physical location, timezone etc.
-	
+
+## Usage
+
+### Via browser
+### Via REST
