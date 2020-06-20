@@ -1,7 +1,5 @@
-# zeroIP
-
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/as1ndu/zeroIP">
     <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
