@@ -1,5 +1,24 @@
 # zeroIP
 
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h1 align="center">ZeroIP</h1>
+
+  <p align="center">
+     Anonymously broadcast crypto transactions without revealing your IP address.
+    <br />
+    <a href="https://as1ndu.github.io/zeroIP"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/as1ndu/zeroIP/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/as1ndu/zeroIP/issues">Request Feature</a>
+  </p>
+</p>
+
 ## Problem statement
 
 A cryptocurrency transaction is broadcast by a user sending a signed message to
