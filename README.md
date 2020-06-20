@@ -41,4 +41,5 @@ payload in to a form (similar to Ether Scan's [pushTx](https://etherscan.io/push
 [^1]: [An Analysis of Anonymity in Bitcoin Using P2PNetwork Traffic](https://www.freehaven.net/anonbib/cache/bitcoin-p2p-anon.pdf), [Transaction Clustering Using Network Traffic Analysis for Bitcoin and Derived Blockchains](https://orbilu.uni.lu/bitstream/10993/39728/1/biryukov-tikhomirov-transaction-clustering.pdf)
 
 [^2]: [The Nym Mixnet](https://nymtech.net/)
+
 [^3]: [Sphinx: The anonymous data format behind Lightning and Nym](https://medium.com/nymtech/sphinx-tl-dr-the-data-packet-that-can-anonymize-bitcoin-and-the-internet-18d152c6e4dc)
