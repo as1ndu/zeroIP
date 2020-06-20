@@ -7,33 +7,33 @@ several nodes that propagate it through the network via the mempool  —  unti
 includes it in a block.
 
 This propagation of the transaction is often done via the open internet. As a
-side effect, users silmuntaneously leak their IP addreses, & this makes  it possible to decode
+side effect, users simultaneously leak their IP addresses, & this makes  it possible to decode
 metadata such as physical location, timezone etc for both the sender, recipients, miners
 & node operators.
 
 Even if the users are transacting in  privacy currencies like Zcash, Monero, Grin or
 using tumblers, the problem still persists.
-This is because the IP address leakage problem exists in the neworking layer of the app
+This is because the IP address leakage problem exists in the networking layer of the app
 and not the blockchain's data layer.
-Users can be tracked by analysing IP addresses of  transaction broadcasts on the open internet as elaborated by several researchers[^1]
+Users can be tracked by analyzing IP addresses of  transaction broadcasts on the open internet as elaborated by several researchers[^1]
 
 ## Solution
 
 zeroIP is an api interface that allows cryptocurrency transactions to be sent to miners
-without leaking  IP addreses.
+without leaking  IP addresses.
 
-It acheives this by proxing transactions through the Nym Anonymity Mixnet[^2].
-The Nym mixnet propergates data packets in a provably secure cryptographic format called Sphinx.
+It achieves this by proxing transactions through the Nym Anonymity Mixnet[^2].
+The Nym mixnet propagates data packets in a provably secure cryptographic format called Sphinx.
 The Sphinx format encrypts packet size/length, packet origin & packet destination[^3].
 
-This allows node operators, miners  & wallet users to securely propergate transactions amongst
+This allows node operators, miners  & wallet users to securely propagate transactions amongst
 each other without revealing metadata like physical location, timezone etc.
-zeroIP inheritly acts as a proxy server or VPN servce for crypto payments.
+zeroIP inherently acts as a proxy server or VPN service for crypto payments.
 
 ## Usage
 
 zeroIP can be used in two ways. The first way is by allowing wallet users to explicitly broadcast transactions through an API provided by zeroIP (similar to [Wallet Connect](https://walletconnect.org/)).
-The second way is by hosting an simple web inteface where users can broadcast transactions by pasting the transaction
+The second way is by hosting an simple web interface where users can broadcast transactions by pasting the transaction
 payload in to a form (similar to Ether Scan's [pushTx](https://etherscan.io/pushTx)).
 
 ### Footnotes
