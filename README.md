@@ -8,10 +8,10 @@
   <p align="center">
      Anonymously broadcast crypto transactions without revealing your IP address.
     <br />
-    <a href="https://speakerdeck.com/as1ndu/zeroip"><strong>Slides »</strong></a>
+    <a href="https://www.youtube.com/watch?v=_bmLwnXDloU"><strong>Video Explainer »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/as1ndu/zeroIP/issues">Issues</a>
+    <a href="https://speakerdeck.com/as1ndu/zeroip">Slides</a>
     ·
     <a href="https://gitcoin.co/hackathon/privacy">About Protect Privacy</a>
   </p>
