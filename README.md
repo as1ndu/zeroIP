@@ -3,17 +3,17 @@
     <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h1 align="center">ZeroIP</h1>
+  <h1 align="center">ZeroIP (proof of concept)</h1>
 
   <p align="center">
      Anonymously broadcast crypto transactions without revealing your IP address.
     <br />
-    <a href="https://as1ndu.github.io/zeroIP"><strong>Explore the docs »</strong></a>
+    <a href="https://speakerdeck.com/as1ndu/zeroip"><strong>Slides »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/as1ndu/zeroIP/issues">Report Bug</a>
+    <a href="https://github.com/as1ndu/zeroIP/issues">Issues</a>
     ·
-    <a href="https://github.com/as1ndu/zeroIP/issues">Request Feature</a>
+    <a href="https://gitcoin.co/hackathon/privacy">About Protect Privacy</a>
   </p>
 </p>
 
@@ -34,7 +34,9 @@ This is because the IP address leakage problem exists in the networking layer of
 and not the blockchain's data layer.
 Users can be tracked by analyzing IP addresses of  transaction broadcasts on the open internet as elaborated by several researchers[^1]
 
-## Solution
+## Solution Over view
+
+![backed-overview.jpg](backed-overview.jpg)
 
 zeroIP is an api interface that allows cryptocurrency transactions to be sent to miners
 without leaking  IP addresses.
@@ -49,7 +51,33 @@ zeroIP inherently acts as a proxy server or VPN service for crypto payments.
 
 ## Usage
 
-zeroIP can be used in two ways. The first way is by allowing wallet users to explicitly broadcast transactions through an API provided by zeroIP (similar to [Wallet Connect](https://walletconnect.org/)).
+zeroIP can be used in two ways.
+
+1. Broadcast packet via web sockets
+
+```javascript
+// Easy dependency free integration with wallets
+
+// Create data structure to send sphinx packet
+const sendMsg = JSON.stringify({
+  type: "send",
+  message: "ETH transaction payload",
+  recipient_address: "ZeroIp-mix-client-address",
+});
+
+// Connect to the any mix node
+const conn = new WebSocket(`ws://nym-mix-node:9001/mix`);
+conn.onmessage = (ev: MessageEvent): void => {
+  const receivedData = JSON.parse(ev.data);
+  if (receivedData.type == "send") {
+    console.log("sent transaction.");  // know if the transaction has been sent
+  }  
+}
+
+// Securely sphinx packet via Web sockets channel
+conn.send(sendMsg);
+```
+
 The second way is by hosting an simple web interface where users can broadcast transactions by pasting the transaction
 payload in to a form (similar to Ether Scan's [pushTx](https://etherscan.io/pushTx)).
 

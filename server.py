@@ -1,4 +1,4 @@
-import requests, websockets
+import requests
 
 from flask import Flask, response, jsonify
 app = Flask(__name__)
@@ -21,11 +21,11 @@ def get_tx():
 
     # Get parameters for coin's network & tx blob
     network =  response.args('network')
-    tx =  response.args('tx')
+    tx =  response.args('tx') # Get raw transaction in Hex 
 
     # Update tx data
     tx_data['network'] = network
-    tx_data['tx'] = tx
+    tx_data['tx'] = tx 
 
     send_tx = cast_tx(tx_data) # Send tx to respective network returns True if successful, False otherwise.
 
@@ -44,7 +44,7 @@ def cast_tx(message_data):
 
     # Send ETH tx 
     if message_data['network'] == 'ETH':
-        r = requests.post('http://etherscan.io/pushTX', message_data['tx'])
+        r = requests.post('https://api.etherscan.io/api?module=proxy&action=eth_sendRawTransaction&hex={0}&apikey=YourApiKeyToken'.format(message_data['tx']))
 
         if r.status_code == 200: # Update tx status if successfully sent
             tx_sent = True
